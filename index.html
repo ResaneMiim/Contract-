@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قرارداد همکاری ادمین تولید محتوا | رسانه میم</title>
+  <link rel="icon" href="img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo-wrap">
+          <img src="img/logo.png" alt="رسانه میم" class="logo" />
+        </div>
+        <div class="brand-text">
+          <h1>رسانه میم</h1>
+          <span>سامانه رسمی ثبت قرارداد</span>
+        </div>
+      </div>
+      <div class="badge-live">
+        <span class="dot"></span>
+        آنلاین
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">
+          <i class="fa-solid fa-file-signature"></i>
+          قرارداد دیجیتال
+        </span>
+        <h2>قرارداد همکاری <span class="grad">ادمین تولید محتوا</span></h2>
+        <p>لطفاً اطلاعات خود را وارد کنید، متن قرارداد را مطالعه نموده و در انتها با کشیدن امضای دیجیتال، قرارداد را تأیید نمایید.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <i class="fa-solid fa-rotate-left stat-icon"></i>
+          <strong>۳</strong>
+          <span>مرتبه اصلاح رایگان</span>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-scroll stat-icon"></i>
+          <strong>۱۴</strong>
+          <span>ماده قرارداد</span>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-shield-halved stat-icon"></i>
+          <strong>۱۰۰٪</strong>
+          <span>دیجیتال و امن</span>
+        </div>
+      </div>
+    </section>
+
+    <form id="contractForm" novalidate>
+
+      <!-- مشخصات مشتری -->
+      <section class="card">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <h3>مشخصات مشتری</h3>
+            <p>اطلاعات هویتی و تماس خود را وارد کنید</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="fullName">نام و نام خانوادگی <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user-pen input-icon"></i>
+              <input type="text" id="fullName" name="fullName" placeholder="مثال: علی رضایی" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="nationalId">کد ملی <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-id-card input-icon"></i>
+              <input type="text" id="nationalId" name="nationalId" placeholder="۱۰ رقم" maxlength="10" inputmode="numeric" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="phone">شماره تماس <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-mobile-screen input-icon"></i>
+              <input type="tel" id="phone" name="phone" placeholder="09xxxxxxxxx" maxlength="11" inputmode="numeric" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">ایمیل (اختیاری)</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-envelope input-icon"></i>
+              <input type="email" id="email" name="email" placeholder="example@mail.com" />
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="address">آدرس (اختیاری)</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-location-dot input-icon"></i>
+              <input type="text" id="address" name="address" placeholder="آدرس محل سکونت / دفتر" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- اطلاعات قرارداد -->
+      <section class="card">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <div>
+            <h3>اطلاعات قرارداد</h3>
+            <p>مبلغ و بازه زمانی قرارداد را مشخص کنید</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field full">
+            <label for="amount">مبلغ قرارداد ماهانه (تومان) <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-coins input-icon"></i>
+              <input type="text" id="amount" name="amount" placeholder="۶,۰۰۰,۰۰۰" inputmode="numeric" required />
+            </div>
+            <span class="field-hint" id="amountInWords"></span>
+          </div>
+
+          <div class="field">
+            <label for="startDate">تاریخ شروع قرارداد <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-calendar-plus input-icon"></i>
+              <input type="text" id="startDate" name="startDate" placeholder="انتخاب تاریخ" readonly class="persian-date" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="endDate">تاریخ پایان قرارداد <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-calendar-check input-icon"></i>
+              <input type="text" id="endDate" name="endDate" placeholder="انتخاب تاریخ" readonly class="persian-date" required />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- متن قرارداد -->
+      <section class="card">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-scroll"></i></div>
+          <div>
+            <h3>متن قرارداد</h3>
+            <p>لطفاً کامل مطالعه فرمایید</p>
+          </div>
+        </div>
+
+        <div class="contract-scroll" id="contractScroll">
+          <h4 class="contract-title">قرارداد همکاری ادمین تولید محتوا</h4>
+
+          <p>این قرارداد فی‌مابین طرفین زیر، با هدف ارائه خدمات مدیریت و تولید محتوای شبکه اجتماعی، در تاریخ <span class="fill-date" id="contractDateDisplay">.................</span> منعقد می‌گردد.</p>
+
+          <h5><i class="fa-solid fa-users"></i> ماده ۱ ـ مشخصات طرفین</h5>
+          <p><strong>۱-۱. مجری:</strong> مجتبی میدانی / رسانه میم</p>
+          <p><strong>۱-۲. مشتری:</strong> <span id="customerNameInContract">علی رضایی</span></p>
+          <p>که از این پس در این قرارداد به‌ترتیب «مجری» و «مشتری» نامیده می‌شوند.</p>
+
+          <h5><i class="fa-solid fa-bullseye"></i> ماده ۲ ـ موضوع قرارداد</h5>
+          <p>موضوع قرارداد عبارت است از ارائه خدمات ادمین تولید محتوا و طراحی محتوای اینستاگرام توسط مجری برای مشتری، مطابق خدمات مشخص‌شده در این قرارداد.</p>
+
+          <h5><i class="fa-solid fa-list-check"></i> ماده ۳ ـ خدمات موضوع قرارداد</h5>
+          <p>خدمات مجری شامل موارد زیر است:</p>
+          <ol>
+            <li>طراحی و آماده‌سازی استوری‌بورد</li>
+            <li>طراحی استوری اینستاگرام</li>
+            <li>ادیت و آماده‌سازی ریلز اینستاگرام</li>
+            <li>طراحی پست اسلایدی</li>
+            <li>طراحی کاور ریلز</li>
+            <li>طراحی کاور پست</li>
+          </ol>
+          <p>هرگونه خدمت، طراحی، ادیت یا فعالیتی خارج از موارد فوق، جزو تعهدات این قرارداد محسوب نشده و در صورت درخواست مشتری، با توافق طرفین و با هزینه جداگانه انجام خواهد شد.</p>
+
+          <h5><i class="fa-solid fa-handshake"></i> ماده ۴ ـ تعهدات مشتری</h5>
+          <ol>
+            <li>تأمین و ارسال به‌موقع کلیه محتوای خام مورد نیاز شامل عکس، ویدئو، متن، لوگو، اطلاعات و سایر فایل‌های موردنیاز برای طراحی و ادیت، بر عهده مشتری است.</li>
+            <li>مسئولیت صحت اطلاعات، متن‌ها، تصاویر و ویدئوهای ارائه‌شده توسط مشتری بر عهده مشتری خواهد بود.</li>
+            <li>تأخیر در ارسال محتوای خام، تأیید طرح‌ها یا ارائه توضیحات لازم، موجب تغییر زمان‌بندی تحویل خواهد شد.</li>
+            <li>مشتری موظف است اصلاحات و نظرات خود را به‌صورت مشخص و منسجم به مجری اعلام نماید.</li>
+          </ol>
+
+          <h5><i class="fa-solid fa-pen-ruler"></i> ماده ۵ ـ اصلاحات</h5>
+          <ol>
+            <li>برای هر فایل طراحی یا ادیت‌شده، حداکثر ۳ مرتبه اصلاح در نظر گرفته شده است.</li>
+            <li>اصلاحات بیشتر از ۳ مرتبه، خارج از تعهدات قرارداد محسوب می‌شود.</li>
+            <li>هزینه اصلاحات مازاد بر ۳ مرتبه، متناسب با حجم و نوع اصلاحات محاسبه شده و در پایان همان ماه به مبلغ قرارداد اضافه خواهد شد.</li>
+            <li>تغییر کامل ایده، تغییر موضوع، تغییر سبک طراحی یا درخواست طراحی مجدد پس از تأیید نهایی، می‌تواند به‌عنوان درخواست جدید و خارج از اصلاحات عادی محاسبه شود.</li>
+          </ol>
+
+          <h5><i class="fa-solid fa-credit-card"></i> ماده ۶ ـ مبلغ و نحوه پرداخت</h5>
+          <p>مبلغ قرارداد ماهانه <span class="fill-amount" id="amountInContract">۶,۰۰۰,۰۰۰ تومان</span> تعیین می‌گردد.</p>
+          <p>مبلغ قرارداد در پایان هر ماه توسط مشتری به مجری پرداخت خواهد شد.</p>
+          <p>هزینه خدمات و اصلاحات خارج از موضوع قرارداد نیز در پایان همان ماه محاسبه و به مبلغ قرارداد اضافه می‌گردد.</p>
+
+          <h5><i class="fa-solid fa-copyright"></i> ماده ۷ ـ مالکیت آثار</h5>
+          <ol>
+            <li>مالکیت نهایی طرح‌ها و فایل‌های تحویلی موضوع این قرارداد پس از تسویه کامل مبالغ مربوط به آن‌ها، متعلق به مشتری خواهد بود.</li>
+            <li>مجری حق دارد آثار طراحی‌شده را صرفاً جهت نمایش در رزومه، نمونه‌کارها و صفحات رسانه میم استفاده نماید؛ مگر اینکه مشتری به‌صورت کتبی با انتشار نمونه‌کار مخالفت نماید.</li>
+            <li>فایل‌های لایه‌باز و قابل ویرایش، تنها در صورت توافق طرفین و در صورت نیاز، تحویل مشتری خواهد شد.</li>
+          </ol>
+
+          <h5><i class="fa-solid fa-triangle-exclamation"></i> ماده ۸ ـ شرایط اضطراری</h5>
+          <p>در صورت بروز شرایط اضطراری برای هر یک از طرفین که ادامه همکاری را برای مدت کوتاهی دشوار یا غیرممکن نماید، با اطلاع‌رسانی به طرف مقابل، امکان تعیین ۱ الی ۲ روز زمان استراحت یا وقفه در همکاری وجود خواهد داشت.</p>
+          <p>در این شرایط، زمان تحویل آثار متناسب با مدت وقفه، جابه‌جا خواهد شد.</p>
+
+          <h5><i class="fa-solid fa-clock"></i> ماده ۹ ـ تأخیر در انجام تعهدات</h5>
+          <ol>
+            <li>طرفین متعهد هستند وظایف خود را در زمان توافق‌شده انجام دهند.</li>
+            <li>تأخیر مشتری در ارسال محتوای خام، اطلاعات، تأییدیه‌ها یا اصلاحات موردنیاز، موجب جابه‌جایی زمان تحویل آثار خواهد شد و مسئولیت تأخیر ناشی از آن بر عهده مشتری است.</li>
+            <li>تأخیر غیرموجه مجری در تحویل آثار نیز، در صورت اثبات و بدون وجود شرایط اضطراری یا تأخیر ناشی از مشتری، مشمول خسارت خواهد بود.</li>
+            <li>میزان خسارت تأخیر، در صورت وقوع، با توافق طرفین و متناسب با مدت و علت تأخیر تعیین و در تسویه همان ماه اعمال خواهد شد.</li>
+          </ol>
+
+          <h5><i class="fa-solid fa-circle-plus"></i> ماده ۱۰ ـ خدمات خارج از قرارداد</h5>
+          <p>هرگونه خدمت خارج از فهرست مندرج در ماده ۳، از جمله طراحی یا ادیت‌هایی که در این قرارداد پیش‌بینی نشده‌اند، خدمت خارج از قرارداد محسوب شده و هزینه آن جداگانه محاسبه خواهد شد.</p>
+          <p>هزینه خدمات خارج از قرارداد در پایان همان ماه به مبلغ قابل پرداخت اضافه می‌شود.</p>
+
+          <h5><i class="fa-solid fa-ban"></i> ماده ۱۱ ـ فسخ قرارداد</h5>
+          <ol>
+            <li>فسخ قرارداد صرفاً در پایان هر ماه امکان‌پذیر است.</li>
+            <li>هر یک از طرفین که قصد ادامه همکاری در ماه بعد را نداشته باشد، موظف است موضوع را پیش از پایان ماه به طرف مقابل اطلاع دهد.</li>
+            <li>مبالغ مربوط به خدمات انجام‌شده تا زمان پایان همکاری، باید به‌طور کامل تسویه گردد.</li>
+            <li>خدمات خارج از قرارداد و اصلاحات مازاد انجام‌شده تا زمان فسخ نیز مشمول تسویه خواهند بود.</li>
+          </ol>
+
+          <h5><i class="fa-solid fa-calendar-days"></i> ماده ۱۲ ـ اعتبار قرارداد</h5>
+          <p>این قرارداد از تاریخ <span class="fill-date" id="startDateDisplay">.................</span> تا تاریخ <span class="fill-date" id="endDateDisplay">.................</span> معتبر بوده و ادامه همکاری پس از پایان دوره، با توافق طرفین امکان‌پذیر خواهد بود.</p>
+          <p>در صورت ادامه همکاری ماهانه، سایر مفاد قرارداد همچنان معتبر خواهد بود مگر اینکه طرفین به‌صورت کتبی توافق جدیدی داشته باشند.</p>
+
+          <h5><i class="fa-solid fa-scale-balanced"></i> ماده ۱۳ ـ حل اختلاف</h5>
+          <p>در صورت بروز هرگونه اختلاف در خصوص اجرای قرارداد، طرفین ابتدا تلاش خواهند کرد موضوع را از طریق مذاکره و توافق مستقیم حل‌وفصل نمایند. در صورت عدم حصول توافق، موضوع از طریق مراجع قانونی صالح پیگیری خواهد شد.</p>
+
+          <h5><i class="fa-solid fa-file-contract"></i> ماده ۱۴ ـ نسخ قرارداد</h5>
+          <p>این قرارداد در ۲ نسخه با اعتبار یکسان تنظیم شده و پس از مطالعه و تأیید طرفین، به امضای مجری و مشتری می‌رسد.</p>
+          <p>امضای طرفین به منزله مطالعه، پذیرش و تأیید مفاد قرارداد است.</p>
+        </div>
+
+        <label class="check-line">
+          <input type="checkbox" id="agreeCheck" required />
+          <span class="checkmark"><i class="fa-solid fa-check"></i></span>
+          <span>متن کامل قرارداد را مطالعه کرده و تمامی مفاد آن را می‌پذیرم.</span>
+        </label>
+      </section>
+
+      <!-- امضا -->
+      <section class="card">
+        <div class="card-head">
+          <div class="card-icon"><i class="fa-solid fa-signature"></i></div>
+          <div>
+            <h3>امضای دیجیتال</h3>
+            <p>با ماوس یا انگشت خود در کادر زیر امضا کنید</p>
+          </div>
+        </div>
+
+        <div class="signature-wrap">
+          <canvas id="signatureCanvas"></canvas>
+          <div class="sig-placeholder" id="sigPlaceholder">
+            <i class="fa-solid fa-pen-nib"></i>
+            اینجا امضا کنید...
+          </div>
+          <div class="sig-line"></div>
+        </div>
+
+        <div class="sig-actions">
+          <button type="button" id="clearSig" class="btn-ghost">
+            <i class="fa-solid fa-trash-can"></i>
+            پاک کردن
+          </button>
+          <span class="sig-hint">
+            <i class="fa-solid fa-circle-info"></i>
+            امضای شما به‌صورت تصویر PNG ثبت می‌شود
+          </span>
+        </div>
+      </section>
+
+      <div class="submit-wrap">
+        <button type="submit" id="submitBtn" class="btn-submit">
+          <span class="btn-text">
+            <i class="fa-solid fa-paper-plane"></i>
+            ثبت نهایی قرارداد و ارسال
+          </span>
+          <span class="btn-loader"></span>
+        </button>
+        <p class="submit-note">
+          <i class="fa-solid fa-lock"></i>
+          پس از ثبت، اطلاعات شما به‌همراه تصویر امضا به‌صورت امن برای مدیریت ارسال می‌شود.
+        </p>
+      </div>
+
+    </form>
+  </main>
+
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+      <div class="modal-icon"><i class="fa-solid fa-check"></i></div>
+      <h3>قرارداد با موفقیت ثبت شد</h3>
+      <p>اطلاعات و امضای شما دریافت و برای مدیریت ارسال گردید. به‌زودی با شما تماس گرفته می‌شود.</p>
+      <button type="button" class="btn-ghost" id="closeModal">متوجه شدم</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="errorModal">
+    <div class="modal-card error">
+      <div class="modal-icon"><i class="fa-solid fa-exclamation"></i></div>
+      <h3>خطا در ارسال</h3>
+      <p id="errorText">مشکلی در ارسال به‌وجود آمد. لطفاً دوباره تلاش کنید.</p>
+      <button type="button" class="btn-ghost" id="closeErrorModal">بستن</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© رسانه میم — تمامی حقوق محفوظ است.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
